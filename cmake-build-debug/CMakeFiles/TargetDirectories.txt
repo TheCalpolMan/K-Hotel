@@ -1,0 +1,3 @@
+G:/Code/C/K Hotel/cmake-build-debug/CMakeFiles/K_Hotel.dir
+G:/Code/C/K Hotel/cmake-build-debug/CMakeFiles/edit_cache.dir
+G:/Code/C/K Hotel/cmake-build-debug/CMakeFiles/rebuild_cache.dir

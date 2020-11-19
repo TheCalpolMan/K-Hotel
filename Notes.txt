@@ -1,0 +1,4 @@
+This program is untested and there is a chance that it may not work. This is due to the fact that tall of the components of the code were only finished by Sunday, hence there was very little time for testing.
+Sorry.
+
+But it did build without errors :)
