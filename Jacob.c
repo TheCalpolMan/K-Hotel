@@ -25,8 +25,8 @@ int geti(){
 
     for (int i = 0; i < 32; ++i) {
         if ((get[i] < 48 || get[i] > 57) && started){
-            break;
             breakpoint = i;
+            break;
         }
         if (get[i] < 48 || get[i] > 57 || get[i] == '-'){
             started = 1;
