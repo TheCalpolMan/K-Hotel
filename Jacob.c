@@ -19,22 +19,30 @@ void inttostr(int source[], char dest[], int lengthofconversion){
 
 int geti(){
     char get[32];
-    int breakpoint = 1, dest = 0, startpos = 0;
+    int breakpoint = 1, dest = 0, negative = 0, started = 0, startpos = 0;
 
     gets(get);
-    if (get[0] == '-'){
-        startpos = 1;
-    }
 
-    for (int i = startpos; i < 32; ++i) {
-        if (get[i] < 48 || get[i] > 57){
+    for (int i = 0; i < 32; ++i) {
+        if ((get[i] < 48 || get[i] > 57) && started){
             break;
             breakpoint = i;
         }
-        dest += pow(10, i) * (get[i] - 48);
+        if (get[i] < 48 || get[i] > 57 || get[i] == '-'){
+            started = 1;
+            startpos = i;
+            if (get[i] == '-'){
+                negative = 1;
+            }
+
+        }
+
+        if (started && i >= startpos + negative){
+            dest += pow(10, i) * (get[i] - 48);
+        }
     }
 
-    if (startpos == 1){
+    if (negative){
         dest *= -1;
     }
     dest = dest / breakpoint;
