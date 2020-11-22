@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-G:/Code/C/K Hotel/Arjun.h
-stdio.h
--
-time.h
--
-stdlib.h
--
-
 G:/Code/C/K Hotel/Jacob.c
 stdio.h
 -
@@ -23,20 +15,8 @@ time.h
 -
 stdlib.h
 -
-math.h
--
 Jacob.h
 G:/Code/C/K Hotel/Jacob.h
 
-G:/Code/C/K Hotel/Jacob.h
-
-G:/Code/C/K Hotel/main.c
-stdio.h
--
-string.h
--
-Arjun.h
-G:/Code/C/K Hotel/Arjun.h
-Jacob.h
 G:/Code/C/K Hotel/Jacob.h
 

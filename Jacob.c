@@ -2,7 +2,6 @@
 #include <string.h>
 #include <time.h>
 #include <stdlib.h>
-#include <math.h>
 #include "Jacob.h"
 
 void strtoint(char source[], int dest[], int lengthofconversion){
@@ -19,16 +18,15 @@ void inttostr(int source[], char dest[], int lengthofconversion){
 
 int geti(){
     char get[32];
-    int breakpoint = 1, dest = 0, negative = 0, started = 0, startpos = 0;
+    int dest = 0, negative = 0, started = 0, startpos = 0;
 
     gets(get);
 
     for (int i = 0; i < 32; ++i) {
         if ((get[i] < 48 || get[i] > 57) && started){
-            breakpoint = i;
             break;
         }
-        if (get[i] < 48 || get[i] > 57 || get[i] == '-'){
+        if (((get[i] > 47 && get[i] < 58) || get[i] == '-') && !started){
             started = 1;
             startpos = i;
             if (get[i] == '-'){
@@ -38,14 +36,14 @@ int geti(){
         }
 
         if (started && i >= startpos + negative){
-            dest += pow(10, i) * (get[i] - 48);
+            dest = dest * 10 + (get[i] - 48);
+            printf("%d\n", dest);
         }
     }
 
     if (negative){
         dest *= -1;
     }
-    dest = dest / breakpoint;
     return dest;
 }
 
@@ -227,7 +225,7 @@ void booktable(){
     printf("\nWhat time would you like to book for?");
     booktime = geti();
     while (booktime != 7 && booktime != 9){
-        printf("Please enter a valid time (either 7 or 9)\n");
+        printf("Please enter a valid time (either 7 or 9) %d\n", booktime);
         fflush(stdin);
         booktime = geti();
     }
