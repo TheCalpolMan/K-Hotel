@@ -17,7 +17,7 @@ void inttostr(int source[], char dest[], int lengthofconversion){
 }
 
 int geti(){
-    char get[32];
+    char get[32] = "";
     int dest = 0, negative = 0, started = 0, startpos = 0;
 
     gets(get);
@@ -37,7 +37,6 @@ int geti(){
 
         if (started && i >= startpos + negative){
             dest = dest * 10 + (get[i] - 48);
-            printf("%d\n", dest);
         }
     }
 
@@ -79,6 +78,7 @@ void booktable(){
 
     printf("Please enter your booking ID: ");
     gets(bookingid);
+    fflush(stdin);
 
     // checking if the booking ID is registered to any of the rooms
 
@@ -158,8 +158,6 @@ void booktable(){
         printf("You've booked a B&B meal plan, hence you cannot book a table for an evening meal, sorry\n");
         return;
     }
-
-    fflush(stdin);
 
     // checking if there are enough seats
     if (tosit > (Tables[0 + day * 2][0] + Tables[0 + day * 2][1] + Tables[0 + day * 2][2]) * 4 && tosit > (Tables[1 + day * 2][0] + Tables[1 + day * 2][1] + Tables[1 + day * 2][2]) * 4 ){
@@ -555,18 +553,7 @@ void CheckOut() {
 //        }
 //    }
 //
-//    room1[2][0] = 119;
-//    room1[2][1] = 104;
-//    room1[2][2] = 97;
-//    room1[2][3] = 114;
-//    room1[2][4] = 116;
-//    room1[2][5] = 111;
-//    room1[2][6] = 110;
-//    room1[2][7] = 49;
-//    room1[2][8] = 50;
-//    room1[2][9] = 51;
-//    room1[2][10] = 52;
-//    room1[2][11] = 53;
+//    strtoint("wharton254", room1[2], 11);
 //
 //    room1[3][4] = 3;
 //
